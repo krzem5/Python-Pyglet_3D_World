@@ -5,7 +5,6 @@ desc=Python-Pyglet_3D_World
 public=true
 homepage=
 license=mit
-remote=
 
 file.readme=.\README.md
 file.gitignore=.\.gitignore
