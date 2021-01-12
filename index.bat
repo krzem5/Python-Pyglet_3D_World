@@ -1,2 +1,3 @@
-python index.py
-pause
+@echo off
+cls
+python src/index.py
