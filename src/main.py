@@ -42,8 +42,6 @@ class Block:
         tex_coords=('t2f',(0,0,1,0,1,1,0,1,))
         self.tex_coords=tex_coords
         self.pos=pos
-        x,y,z=pos[0],pos[1],pos[2]
-        X,Y,Z=x+1,y+1,z+1
         map_[tuple(pos)]=self
         self.update(map_)
     def draw(self):self.batch.draw()
@@ -86,7 +84,7 @@ class Player:
         if keys[key.S]:self.pos[0]-=dx;self.pos[2]+=dz
         if keys[key.A]:self.pos[0]-=dz;self.pos[2]-=dx
         if keys[key.D]:self.pos[0]+=dz;self.pos[2]+=dx
-        if keys[key.SPACE]:self.pos[1]+=s 
+        if keys[key.SPACE]:self.pos[1]+=s
         if keys[key.LSHIFT]:self.pos[1]-=s
         if keys[key.UP]:self.speed+=1
         if keys[key.DOWN]:self.speed-=1
@@ -135,7 +133,7 @@ class Window(pyglet.window.Window):
                     if 0<y<h-(dirt+1):Block('stone',[x,y,z],self.map_)
                     if h-(dirt+2)<y<h:Block('dirt',[x,y,z],self.map_)
                     if y==h:Block('grass_block',[x,y,z],self.map_)
-        
+
 if __name__ == '__main__':
     window=Window(width=854,height=480,caption='3D',resizable=False)
     glClearColor(0.5,0.7,1,1)
